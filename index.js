@@ -14,14 +14,14 @@ app.get('/', async (req, res) => {
       const articles = []
       $('.story', html).each(function () {
         const title = $(this).text().trim()
-        const url = $(this).find('a').attr('href')
-        const img =
+        const link = $(this).find('a').attr('href')
+        const image =
           $(this).find('img').attr('data-src') ||
           'https://photo-cms-plo.zadn.vn/600x360/Uploaded/2022/pwvotwiv/2022_05_30/4-dad4-451.jpg'
         articles.push({
           title,
-          url,
-          img,
+          link,
+          image,
         })
       })
       res.json(articles)
