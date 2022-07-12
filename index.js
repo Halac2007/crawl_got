@@ -16,10 +16,13 @@ app.get('/', async (req, res) => {
         // const title = $(this).text().trim()
         const title = $(this).find('a').attr('title')
         const link = $(this).find('a').attr('href')
-        const image = $(this).find('a').find('img').attr('src') || $(this).find('a').find('img').attr('data-src')
+        const imageTop = $(this).find('a').find('img').attr('src')
+        const image = $(this).find('a').find('img').attr('data-src')
+
         articles.push({
           title,
           link,
+          imageTop,
           image,
         })
       })
