@@ -16,8 +16,7 @@ app.get('/', async (req, res) => {
         // const title = $(this).text().trim()
         const title = $(this).find('a').attr('title')
         const link = $(this).find('a').attr('href')
-        const image =
-          $(this).find('a').attr('src') || 'https://photo-cms-plo.zadn.vn/600x360/Uploaded/2022/pwvotwiv/2022_05_30/4-dad4-451.jpg'
+        const image = $(this).find('a').find('img').attr('src')
         articles.push({
           title,
           link,
