@@ -13,7 +13,8 @@ app.get('/', async (req, res) => {
       const $ = cheerio.load(html)
       const articles = []
       $('.story', html).each(function () {
-        const title = $(this).text().trim()
+        // const title = $(this).text().trim()
+        const title = $(this).find('a').attr('title')
         const link = $(this).find('a').attr('href')
         const image =
           $(this).find('img').attr('data-src') ||
