@@ -14,11 +14,11 @@ app.get('/', async (req, res) => {
       const articles = []
       $('.story', html).each(function () {
         // const title = $(this).text().trim()
-        const title = $(this).find('.story__heading').find('a').attr('title')
-        const link = $(this).find('.story__heading').find('a').attr('href')
-        const imageTop = $(this).find('.story__heading').find('a').find('img').attr('src')
+        const title = $(this).find('a').attr('title')
+        const link = $(this).find('a').attr('href')
+        const imageTop = $(this).find('a').find('img').attr('src')
         const image =
-          $(this).find('.story__heading').find('a').find('img').attr('data-src') ||
+          $(this).find('a').find('img').attr('data-src') ||
           'https://photo-cms-plo.zadn.vn/600x360/Uploaded/2022/pwvotwiv/2022_05_30/4-dad4-451.jpg'
         const time = $(this).find('.story__time').text().trim() || ' '
         articles.push({
